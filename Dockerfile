@@ -14,6 +14,7 @@ RUN apt-get update && \
 	apt-get autoclean && \
 	apt-get -y install nginx-full && \
 	apt-get -y install build-essential python-dev libxml2-dev python-pip unzip wget supervisor && \
+	apt-get -y install sudo && \
 	pip install setuptools --no-use-wheel --upgrade && \
 	PIPPATH=`which pip` && \
 	$PIPPATH install --upgrade uwsgi && \
