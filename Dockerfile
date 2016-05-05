@@ -24,6 +24,8 @@ COPY gzip_static.conf /etc/nginx/conf.d/web2py/gzip_static.conf
 COPY gzip.conf /etc/nginx/conf.d/web2py/gzip.conf
 COPY web2py /etc/nginx/sites-available/web2py
 
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+
 # setup nginx
 RUN ln -s /etc/nginx/sites-available/web2py /etc/nginx/sites-enabled/web2py && \
 	rm /etc/nginx/sites-enabled/default && \
