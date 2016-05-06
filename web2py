@@ -1,5 +1,6 @@
+daemon off;
 server {
-        listen          80;
+        listen          127.0.0.1:80;
         server_name     $hostname;
         ###to enable correct use of response.static_version
         location ~* ^/(\w+)/static(?:/_[\d]+\.[\d]+\.[\d]+)?/(.*)$ {
@@ -32,7 +33,7 @@ server {
         }
 }
 server {
-        listen 443 default_server ssl;
+        listen 127.0.0.1:443 default_server ssl;
         server_name     $hostname;
         ssl_certificate         /etc/nginx/ssl/web2py.crt;
         ssl_certificate_key     /etc/nginx/ssl/web2py.key;
