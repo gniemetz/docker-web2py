@@ -53,7 +53,7 @@ RUN mkdir $INSTALL_DIR && cd $INSTALL_DIR && \
 	cd $W2P_DIR && \
 	sudo -u www-data python -c "from gluon.main import save_password; save_password('$PW',80)" && \
 	sudo -u www-data python -c "from gluon.main import save_password; save_password('$PW',443)" && \
-	sudo nginx
+	sudo nginx -g "daemon off;"
  
 EXPOSE 80 443 8000
 
