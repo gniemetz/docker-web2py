@@ -29,7 +29,6 @@ COPY web2py /etc/nginx/sites-available/web2py
 RUN ln -s /etc/nginx/sites-available/web2py /etc/nginx/sites-enabled/web2py && \
 	rm /etc/nginx/sites-enabled/default && \
 	mkdir /etc/nginx/ssl && cd /etc/nginx/ssl && \
-	echo "daemon off;" >> /etc/nginx/nginx.conf && \
 	openssl genrsa -passout pass:$CERT_PASS 1024 > web2py.key && \
 	chmod 400 web2py.key && \
 	openssl req -new -x509 -nodes -sha1 -days 1780 -subj "/C=US/ST=Denial/L=Chicago/O=Dis/CN=www.example.com" -key web2py.key > web2py.crt && \
